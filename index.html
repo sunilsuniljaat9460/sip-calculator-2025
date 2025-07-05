@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIP Calculator India 2025 | Grow Your Wealth</title>
+  <meta name="description" content="Use our SIP Calculator to estimate your mutual fund returns, plan goals, and compare step-up SIPs vs FDs. Fully optimized for Indian investors in 2025." />
+  <meta name="keywords" content="SIP Calculator 2025, Mutual Fund SIP, Step-Up SIP, SIP vs FD, SIP Return Calculator, Online SIP Tool" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="SIP Calculator India 2025 | Grow Your Wealth" />
+  <meta property="og:description" content="Plan and track your SIP investments with ease. India's trusted SIP tool." />
+  <meta property="og:image" content="blog/og-image.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white transition duration-300">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6 px-4 text-center relative">
+    <img src="logo.svg" alt="SIP Calculator Logo" class="h-10 mx-auto mb-2" />
+    <h1 class="text-3xl font-bold">SIP Calculator – 2025</h1>
+    <p class="text-sm mt-2">Smartly plan your mutual fund investments in India</p>
+    <button id="darkToggle" aria-label="Toggle Dark Mode" class="absolute top-4 right-4 bg-white text-blue-600 px-3 py-1 rounded hover:bg-yellow-300 transition">
+      Toggle 🌙
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto p-6 mt-6 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+
+    <!-- SIP Calculator -->
+    <section id="calculator" class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">📈 SIP Calculator</h2>
+      <div class="grid gap-4">
+        <div>
+          <label for="monthly" class="font-medium">Monthly Investment (₹)</label>
+          <input type="number" id="monthly" placeholder="e.g. 10000" min="100" max="1000000"
+            class="w-full mt-1 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" />
+        </div>
+        <div>
+          <label for="years" class="font-medium">Investment Period (Years)</label>
+          <input type="number" id="years" placeholder="e.g. 20" min="1" max="40"
+            class="w-full mt-1 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" />
+        </div>
+        <div>
+          <label for="rate" class="font-medium">Expected Return (% per year)</label>
+          <input type="number" id="rate" placeholder="e.g. 12" min="1" max="30"
+            class="w-full mt-1 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" />
+        </div>
+        <button onclick="calculateSIP()" class="bg-blue-600 text-white font-medium px-6 py-2 rounded hover:bg-blue-700 transition">
+          Calculate
+        </button>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section id="result" class="mb-8 hidden">
+      <h3 class="text-lg font-semibold mb-2">📊 Result Summary</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+        <div>
+          <p class="text-sm">Invested Amount</p>
+          <p id="invested" class="text-xl font-bold text-blue-600 dark:text-yellow-400">0</p>
+        </div>
+        <div>
+          <p class="text-sm">Estimated Returns</p>
+          <p id="returns" class="text-xl font-bold text-blue-600 dark:text-yellow-400">0</p>
+        </div>
+        <div>
+          <p class="text-sm">Maturity Amount</p>
+          <p id="maturity" class="text-xl font-bold text-blue-600 dark:text-yellow-400">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section id="chartSection" class="mb-8 hidden">
+      <canvas id="sipChart" class="mx-auto max-w-xs sm:max-w-md"></canvas>
+    </section>
+
+    <!-- Blog Teasers -->
+    <section id="blog" class="mt-10">
+      <h2 class="text-xl font-semibold mb-4">📚 From Our SIP Blog</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><a href="blog/sip-vs-fd.html" class="text-blue-600 hover:underline">SIP vs FD: Which one is better in 2025?</a></li>
+        <li><a href="blog/step-up-sip.html" class="text-blue-600 hover:underline">Step-Up SIP: Beat Inflation With Growing Investment</a></li>
+        <li><a href="blog/how-to-get-1-crore-with-5000.html" class="text-blue-600 hover:underline">How to invest ₹5000/month to get ₹1 Cr in 20 years?</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- WhatsApp CTA -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 z-50">
+    📲 Chat with Rohan
+  </a>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-600 dark:text-gray-300">
+    © 2025 Rohan Choudhary. All rights reserved. |
+    <a href="privacy.html" class="text-blue-600 dark:text-yellow-300 hover:underline">Privacy Policy</a>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+/* Reusable Container */
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #4169E1;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  transition: 0.2s ease;
+}
+header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  transition: 0.2s ease;
+}
+header h1:hover,
+header p:hover {
+  transform: scale(1.02);
+  color: #FFF44F;
+}
+
+/* Calculator Section */
+.calculator {
+  background: white;
+  margin-top: 30px;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.calculator label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #333;
+}
+.calculator input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+.calculator input:focus {
+  outline: none;
+  border-color: #4169E1;
+  box-shadow: 0 0 5px #4169E1;
+}
+
+.calculator button {
+  margin-top: 25px;
+  background-color: #4169E1;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(65, 105, 225, 0.2);
+}
+.calculator button:hover {
+  background-color: #2e54c1;
+  transform: scale(1.04);
+}
+
+/* Result Box */
+.result {
+  margin-top: 30px;
+  background: #f1f6ff;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #4169E1;
+}
+.result p {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+/* Chart */
+canvas {
+  margin-top: 25px;
+  max-width: 100%;
+}
+
+/* Blog Section */
+.blog {
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.blog h2 {
+  color: #4169E1;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  transition: 0.2s ease;
+}
+.blog h2:hover {
+  color: #2e54c1;
+}
+.blog ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+.blog li {
+  margin-bottom: 12px;
+}
+.blog a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.blog a:hover {
+  color: #4169E1;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  background: #f1f1f1;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #444;
+}
+footer a {
+  color: #4169E1;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Back to Top Button (optional JS required) */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4169E1;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#backToTop:hover {
+  background: #2e54c1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  .calculator,
+  .blog {
+    padding: 20px 15px;
+  }
+  .calculator button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+  input, button {
+    font-size: 1rem;
+  }
+  .result p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Dark Mode Support (Tailwind 'dark:' will apply these) */
+body.dark {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+.calculator input,
+.calculator button,
+.blog,
+.result,
+footer {
+  transition: background 0.3s, color 0.3s;
+}
+body.dark .calculator,
+body.dark .blog,
+body.dark .result {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+body.dark footer {
+  background-color: #1a202c;
+  color: #ccc;
+}
+body.dark a {
+  color: #93c5fd;
+}
+body.dark a:hover {
+  color: #60a5fa;
+}
